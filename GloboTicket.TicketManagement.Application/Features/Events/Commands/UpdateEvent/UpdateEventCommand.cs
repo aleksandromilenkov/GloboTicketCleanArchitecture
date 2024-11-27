@@ -1,12 +1,13 @@
-﻿using System;
+﻿using MediatR;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace GloboTicket.TicketManagement.Application.Features.Events
+namespace GloboTicket.TicketManagement.Application.Features.Events.Commands.UpdateEvent
 {
-    public class EventDetailVm
+    public class UpdateEventCommand : IRequest
     {
         public Guid EventId { get; set; }
         public string Name { get; set; } = string.Empty;
@@ -14,7 +15,7 @@ namespace GloboTicket.TicketManagement.Application.Features.Events
         public string? Artist { get; set; }
         public string? Description { get; set; }
         public string? ImageUrl { get; set; }
+        public DateTime Date { get; set; }
         public Guid CategoryId { get; set; }
-        public CategoryDto Category { get; set; } = default!;
     }
 }
