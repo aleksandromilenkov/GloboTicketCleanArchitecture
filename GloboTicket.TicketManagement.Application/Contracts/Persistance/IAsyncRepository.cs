@@ -11,7 +11,7 @@ namespace GloboTicket.TicketManagement.Application.Contracts.Persistance
         public Task<T> GetByIdAsync(Guid id);
         public Task<IReadOnlyList<T>> ListAllAsync();
         public Task<T> AddAsync(T entity);
-        public Task<T> UpdateAsync(T entity);
-        public Task<T> DeleteAsync(T entity);
+        public Task UpdateAsync(T entity);
+        public Task DeleteAsync(T entity);
     }
 }
