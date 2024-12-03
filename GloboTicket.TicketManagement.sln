@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.12.35514.174 d17.12
+VisualStudioVersion = 17.12.35514.174
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{699481E9-2C85-4AA9-86B2-880A16D304DC}"
 EndProject
@@ -18,6 +18,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GloboTicket.TicketManagement.Application", "GloboTicket.TicketManagement.Application\GloboTicket.TicketManagement.Application.csproj", "{E5AF3F5E-AA3C-423B-96CF-17BB544817B5}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GloboTicket.TicketManagment.Persistence", "GloboTicket.TicketManagment.Persistence\GloboTicket.TicketManagment.Persistence.csproj", "{7A1ADC3F-53B7-4895-93CC-FC4E235AC1CB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GloboTicket.TicketManagement.Infrastructure", "GloboTicket.TicketManagement.Infrastructure\GloboTicket.TicketManagement.Infrastructure.csproj", "{3EFF989B-6F77-4AF6-9C9A-E6FE7442BC87}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -37,6 +39,10 @@ Global
 		{7A1ADC3F-53B7-4895-93CC-FC4E235AC1CB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7A1ADC3F-53B7-4895-93CC-FC4E235AC1CB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7A1ADC3F-53B7-4895-93CC-FC4E235AC1CB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3EFF989B-6F77-4AF6-9C9A-E6FE7442BC87}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3EFF989B-6F77-4AF6-9C9A-E6FE7442BC87}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3EFF989B-6F77-4AF6-9C9A-E6FE7442BC87}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3EFF989B-6F77-4AF6-9C9A-E6FE7442BC87}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -48,5 +54,6 @@ Global
 		{E307F432-2602-46FD-BC85-CB2C99F2520A} = {344DC3E8-BDEC-4A80-935D-B9B508ABCADE}
 		{E5AF3F5E-AA3C-423B-96CF-17BB544817B5} = {344DC3E8-BDEC-4A80-935D-B9B508ABCADE}
 		{7A1ADC3F-53B7-4895-93CC-FC4E235AC1CB} = {517196FF-F31F-4FFC-B6E4-0EF15BC05299}
+		{3EFF989B-6F77-4AF6-9C9A-E6FE7442BC87} = {517196FF-F31F-4FFC-B6E4-0EF15BC05299}
 	EndGlobalSection
 EndGlobal
