@@ -1,4 +1,5 @@
-﻿using GloboTicket.TicketManagement.Application.Features.Events.Commands.CreateEvent;
+﻿using GloboTicket.TicketManagement.Api.Utility;
+using GloboTicket.TicketManagement.Application.Features.Events.Commands.CreateEvent;
 using GloboTicket.TicketManagement.Application.Features.Events.Commands.DeleteEvent;
 using GloboTicket.TicketManagement.Application.Features.Events.Commands.UpdateEvent;
 using GloboTicket.TicketManagement.Application.Features.Events.Queries.GetEventDetail;
@@ -32,7 +33,7 @@ namespace GloboTicket.TicketManagement.Api.Controllers
 
         [HttpGet("{eventId:Guid}", Name = "GetEventById")]
         [ProducesResponseType(StatusCodes.Status200OK)]
-        public async Task<ActionResult<EventDetailVm>> GetEventById([FromQuery]Guid eventId)
+        public async Task<ActionResult<EventDetailVm>> GetEventById([FromRoute]Guid eventId)
         {
             var eventDetail = await _mediator.Send(new GetEventDetailQuery() { Id = eventId});
             return Ok(eventDetail);
@@ -55,16 +56,17 @@ namespace GloboTicket.TicketManagement.Api.Controllers
             return NoContent();
         }
 
-        [HttpDelete("{eventId: Guid}",Name ="DeleteEvent")]
+        [HttpDelete("{eventId:Guid}",Name ="DeleteEvent")]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
-        public async Task<ActionResult> DeleteEvent([FromQuery] Guid eventId)
+        public async Task<ActionResult> DeleteEvent([FromRoute] Guid eventId)
         {
             await _mediator.Send(new DeleteEventCommand() { EventId = eventId});
             return NoContent();
         }
 
         [HttpGet("export", Name = "ExportEvents")]
+        [FileResultContentType("text/csv")]
         public async Task<FileResult> ExportEvents()
         {
             var fileDTO = await _mediator.Send(new GetEventsExportQuery());
