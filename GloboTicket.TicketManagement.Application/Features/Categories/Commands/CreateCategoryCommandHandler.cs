@@ -12,9 +12,9 @@ namespace GloboTicket.TicketManagement.Application.Features.Categories.Commands
 {
     public class CreateCategoryCommandHandler : IRequestHandler<CreateCategoryCommand, CreateCategoryCommandResponse>
     {
-        private readonly ICategoryRepository _categoryRepository;
+        private readonly IAsyncRepository<Category> _categoryRepository;
         private readonly IMapper _mapper;
-        public CreateCategoryCommandHandler(ICategoryRepository categoryRepository, IMapper mapper)
+        public CreateCategoryCommandHandler(IAsyncRepository<Category> categoryRepository, IMapper mapper)
         {
             _categoryRepository = categoryRepository;
             _mapper = mapper;
