@@ -3,6 +3,7 @@ using GloboTicket.TicketManagement.Api.Services;
 using GloboTicket.TicketManagement.Api.Utility;
 using GloboTicket.TicketManagement.Application;
 using GloboTicket.TicketManagement.Application.Contracts;
+using GloboTicket.TicketManagement.Identity;
 using GloboTicket.TicketManagement.Infrastructure;
 using GloboTicket.TicketManagment.Persistence;
 using Microsoft.EntityFrameworkCore;

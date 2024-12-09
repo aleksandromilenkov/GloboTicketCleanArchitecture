@@ -1,11 +1,13 @@
 ﻿using GloboTicket.TicketManagement.Application.Contracts;
 using GloboTicket.TicketManagement.Domain.Common;
 using GloboTicket.TicketManagement.Domain.Entities;
+using GloboTicket.TicketManagement.Identity.Models;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
 namespace GloboTicket.TicketManagment.Persistence
 {
-    public class GloboTicketDbContext : DbContext
+    public class GloboTicketDbContext : IdentityDbContext<ApplicationUser>
     {
         private readonly ILoggedInUserService? _loggedInUserService;
         public GloboTicketDbContext(DbContextOptions<GloboTicketDbContext> options) : base(options) { }
@@ -21,6 +23,7 @@ namespace GloboTicket.TicketManagment.Persistence
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            base.OnModelCreating(modelBuilder);
             modelBuilder.ApplyConfigurationsFromAssembly(typeof(GloboTicketDbContext).Assembly);
 
             //seed data, added through migrations
