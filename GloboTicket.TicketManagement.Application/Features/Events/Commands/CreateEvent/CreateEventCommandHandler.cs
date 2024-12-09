@@ -39,7 +39,7 @@ namespace GloboTicket.TicketManagement.Application.Features.Events.Commands.Crea
                 await _emailService.SendEmail(email);
             }catch(Exception e)
             {
-
+                throw new Exception("Cannot send email");
             }
             return @event.EventId;
         }

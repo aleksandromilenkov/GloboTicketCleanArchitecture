@@ -1,4 +1,5 @@
-﻿using GloboTicket.TicketManagement.Api.Services;
+﻿using GloboTicket.TicketManagement.Api.Middlewares;
+using GloboTicket.TicketManagement.Api.Services;
 using GloboTicket.TicketManagement.Api.Utility;
 using GloboTicket.TicketManagement.Application;
 using GloboTicket.TicketManagement.Application.Contracts;
@@ -51,7 +52,11 @@ namespace GloboTicket.TicketManagement.Api
 
             // Authentication, Exception handling, CORS, Authorization middleware
             app.UseAuthentication();
+
+            app.UseCustomExceptionsHandler();
+
             app.UseCors("Open");
+
             app.UseAuthorization();
 
             // Map controllers to endpoints
