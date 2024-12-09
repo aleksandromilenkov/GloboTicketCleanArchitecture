@@ -10,6 +10,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Microsoft.Extensions.Logging;
 
 namespace GloboTicket.TicketManagement.Application.Features.Events.Commands.CreateEvent
 {
@@ -18,11 +19,14 @@ namespace GloboTicket.TicketManagement.Application.Features.Events.Commands.Crea
         private readonly IEventRepository _eventRepository;
         private readonly IMapper _mapper;
         private readonly IEmailService _emailService;
-        public CreateEventCommandHandler(IEventRepository eventRepository, IMapper mapper, IEmailService emailService)
+        private readonly ILogger<CreateEventCommandHandler> _logger;
+
+        public CreateEventCommandHandler(IEventRepository eventRepository, IMapper mapper, IEmailService emailService, ILogger<CreateEventCommandHandler> logger)
         {
             _eventRepository = eventRepository;
             _mapper = mapper;
             _emailService = emailService;
+            _logger = logger;
         }
         public async Task<Guid> Handle(CreateEventCommand request, CancellationToken cancellationToken)
         {
@@ -33,13 +37,14 @@ namespace GloboTicket.TicketManagement.Application.Features.Events.Commands.Crea
             @event = await _eventRepository.AddAsync(@event);
 
             // Sending email notification to admin address
-            var email = new Email { To = "asd@asd.com", Body = $"A new event was created {request}", Subject = "A new event created" };
+            var email = new Email { To = "admin@globoticket.com", Body = $"A new event was created {request}", Subject = "A new event created" };
             try
             {
                 await _emailService.SendEmail(email);
-            }catch(Exception e)
+            }catch(Exception ex)
             {
-                throw new Exception("Cannot send email");
+                //this shouldn't stop the API from doing else so this can be logged
+                _logger.LogError($"Mailing about event {@event.EventId} failed due to an error with the mail service: {ex.Message}");
             }
             return @event.EventId;
         }
