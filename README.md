@@ -11,6 +11,8 @@ It follows the principles of Clean Architecture to maintain scalability and main
 **FluentValidation**: Validates input data to ensure correctness.   
 **Entity Framework Core**: For data access with a SQL Server database.  
 **Logging**: Built-in logging for tracking application behavior.  
+**Unit Testing**: Unit testing with Moq and Shouldly.  
+**Integration Testing**: Integration testing for the API with In Memory database.    
 
 **Category and Event Management** :
 Categories can have many associated events.
