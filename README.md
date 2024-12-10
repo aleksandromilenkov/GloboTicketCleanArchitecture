@@ -55,7 +55,7 @@ Uses EF Core to interact with a SQL Server database for data persistence.
 
 Using Serilog for easy tracking and debugging of application behavior.  
 
-**Unit Testing and Integration Testing**:
+**Unit Testing and Integration Testing**:  
 Using XUnit, Moq, Shouldly and EntityFrameworkCore In Memory database.  
 
 ## Technologies  
