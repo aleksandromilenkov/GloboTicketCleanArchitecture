@@ -98,24 +98,24 @@ Before running the application, ensure you have the following installed:
 
 4. Update the connection string for SQL Server in appsettings.json:
 "ConnectionStrings": {  
-  "DefaultConnection": "Server=your-server;Database=GloboTicketDb;User Id=your-username;Password=your-password;"  
+  "DefaultConnection": "Server=your-server; Database=GloboTicketDb; User Id=your-username; Password=your-password;"  
 }  
 
 
 
-5. Run the database migrations to create the schema:
+6. Run the database migrations to create the schema:
    ```bash
    dotnet ef database update
 
 
 
-6. Build and run the application:
+7. Build and run the application:
    ```bash
    dotnet run ```
 
 
  
-7. Configuration  
+8. Configuration  
 JWT Settings:  
  The JWT token is configured in the appsettings.json file:  
 "JwtSettings": {  
@@ -124,14 +124,16 @@ JWT Settings:
   "Audience": "GloboTicketUsers",  
   "ExpiryMinutes": 120  
 }  
-Email Settings: Configure the SMTP settings in the appsettings.json for email notifications:  
 
-"EmailSettings": {  
-  "SmtpServer": "smtp.your-email.com",  
-  "SmtpPort": 587,  
-  "SenderEmail": "your-email@domain.com",  
-  "SenderPassword": "your-email-password"  
-}  
+   Email Settings:  
+   Configure the SMTP settings in the appsettings.json for email notifications:  
+   "EmailSettings": {  
+     "SmtpServer": "smtp.your-email.com",  
+     "SmtpPort": 587,  
+     "SenderEmail": "your-email@domain.com",  
+     "SenderPassword": "your-email-password"  
+   }  
+
 8. Running the Application:  
    ```bash
    dotnet run
