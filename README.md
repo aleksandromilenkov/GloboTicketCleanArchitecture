@@ -81,7 +81,7 @@ Before running the application, ensure you have the following installed:
 
  ```bash
    git clone [https://your-repo-url.git](https://github.com/your-username/GloboTicket.git)
-   cd your-repo-folder
+   cd your-repo-folder```
 
 Navigate to the project directory:
 
