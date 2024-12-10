@@ -81,17 +81,24 @@ Before running the application, ensure you have the following installed:
 
  ```bash
    git clone [https://your-repo-url.git](https://github.com/your-username/GloboTicket.git)
-   cd your-repo-folder```
+   cd your-repo-folder
+
+
 
 Navigate to the project directory:
 
  ```bash
    cd GloboTicket
 
+
+
 Restore the dependencies:
 
  ```bash
    dotnet restore
+
+
+
 
 Update the connection string for SQL Server in appsettings.json:
 
@@ -102,11 +109,15 @@ Run the database migrations to create the schema:
 
  ```bash
    dotnet ef database update
-```
+
+
+
 Build and run the application:
 
  ```bash
    dotnet run ```
+
+
 
 Configuration  
 JWT Settings: The JWT token is configured in the appsettings.json file:
@@ -131,3 +142,6 @@ Run the project from the command line:
  ```bash
    dotnet run
 The application will be available on http://localhost:5000 or the port you configure.
+
+
+
