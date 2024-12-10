@@ -64,9 +64,9 @@ This application is built using the following technologies:
 -MediatR (for CQRS)   
 -AutoMapper (for mapping models)  
 -FluentValidation (for input validation)  
--Excel Export (via a package like EPPlus)  
--SMTP Email Service (to send emails)  
--Logging (via Serilog or built-in ASP.NET Core logging)  
+-Excel Export (via a package CsvHelper)  
+-Email Service (SendGrid)  
+-Logging (via Serilog)  
 -Swagger (for API documentation)  
 
 ## Installation
