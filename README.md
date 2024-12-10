@@ -97,9 +97,9 @@ Before running the application, ensure you have the following installed:
 
 
 4. Update the connection string for SQL Server in appsettings.json:
-"ConnectionStrings": {
-  "DefaultConnection": "Server=your-server;Database=GloboTicketDb;User Id=your-username;Password=your-password;"
-}
+"ConnectionStrings": {  
+  "DefaultConnection": "Server=your-server;Database=GloboTicketDb;User Id=your-username;Password=your-password;"  
+}  
 
 
 
@@ -118,20 +118,20 @@ Before running the application, ensure you have the following installed:
 7. Configuration  
 JWT Settings:  
  The JWT token is configured in the appsettings.json file:  
-"JwtSettings": {
-  "Secret": "your-secret-key-here",
-  "Issuer": "GloboTicket",
-  "Audience": "GloboTicketUsers",
-  "ExpiryMinutes": 120
-}
+"JwtSettings": {  
+  "Secret": "your-secret-key-here",  
+  "Issuer": "GloboTicket",  
+  "Audience": "GloboTicketUsers",  
+  "ExpiryMinutes": 120  
+}  
 Email Settings: Configure the SMTP settings in the appsettings.json for email notifications:  
 
-"EmailSettings": {
-  "SmtpServer": "smtp.your-email.com",
-  "SmtpPort": 587,
-  "SenderEmail": "your-email@domain.com",
-  "SenderPassword": "your-email-password"
-}
+"EmailSettings": {  
+  "SmtpServer": "smtp.your-email.com",  
+  "SmtpPort": 587,  
+  "SenderEmail": "your-email@domain.com",  
+  "SenderPassword": "your-email-password"  
+}  
 8. Running the Application:  
    ```bash
    dotnet run
