@@ -102,7 +102,7 @@ Run the database migrations to create the schema:
 
  ```bash
    dotnet ef database update
-
+```
 Build and run the application:
 
  ```bash
