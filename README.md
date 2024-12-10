@@ -55,6 +55,9 @@ Uses EF Core to interact with a SQL Server database for data persistence.
 
 Using Serilog for easy tracking and debugging of application behavior.  
 
+**Unit Testing and Integration Testing**:
+Using XUnit, Moq, Shouldly and EntityFrameworkCore In Memory database.  
+
 ## Technologies  
 This application is built using the following technologies:  
 
@@ -70,6 +73,7 @@ This application is built using the following technologies:
 -Email Service (SendGrid)  
 -Logging (via Serilog)  
 -Swagger (for API documentation)  
+-Moq, Shouldly and EntityFrameworkCore.InMemory (For Unit and Integration testing)  
 
 ## Installation
 Prerequisites  
