@@ -106,7 +106,7 @@ Run the database migrations to create the schema:
 Build and run the application:
 
  ```bash
-   dotnet run
+   dotnet run ```
 
 Configuration  
 JWT Settings: The JWT token is configured in the appsettings.json file:
