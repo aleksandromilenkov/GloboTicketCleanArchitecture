@@ -1,16 +1,18 @@
-Overview
-The GloboTicket Ticket Management backend application is designed for managing tickets for various events. It follows the principles of Clean Architecture to maintain scalability and maintainable code. The core features include:
+## Overview
+The GloboTicket Ticket Management backend application is designed for managing tickets for various events.  
+It follows the principles of Clean Architecture to maintain scalability and maintainable code. The core features include:  
 
-Event and Category management: 1-to-many relationship between events and categories.
-User registration and authentication: Using ASP.NET Core Identity and JWT for secure user authentication.
-Excel export: Capability to export event details to an Excel file.
-Email notifications: Sends an email notification when a new event is created.
-CQRS: Implemented using MediatR for handling queries and commands.
-AutoMapper: Automatically maps between domain models and ViewModels.
-FluentValidation: Validates input data to ensure correctness.
-Entity Framework Core: For data access with a SQL Server database.
-Logging: Built-in logging for tracking application behavior.
-Table of Contents
+**Event and Category management**: 1-to-many relationship between events and categories.
+**User registration and authentication**: Using ASP.NET Core Identity and JWT for secure user authentication.
+**Excel export**: Capability to export event details to an Excel file.
+**Email notifications**: Sends an email notification when a new event is created.
+**CQRS**: Implemented using MediatR for handling queries and commands.
+**AutoMapper**: Automatically maps between domain models and ViewModels.
+**FluentValidation**: Validates input data to ensure correctness.
+**Entity Framework Core**: For data access with a SQL Server database.
+**Logging**: Built-in logging for tracking application behavior.
+
+## Table of Contents
 Features
 Technologies
 Installation
