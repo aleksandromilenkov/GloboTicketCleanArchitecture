@@ -77,51 +77,47 @@ Before running the application, ensure you have the following installed:
 -Visual Studio or VS Code  
 
 ## Steps  
--Clone the repository:  
-
- ```bash
+1. Clone the repository:  
+   ```bash
    git clone [https://your-repo-url.git](https://github.com/your-username/GloboTicket.git)
    cd your-repo-folder
 
 
 
-Navigate to the project directory:
-
- ```bash
+2. Navigate to the project directory:
+   ```bash
    cd GloboTicket
 
 
 
-Restore the dependencies:
-
- ```bash
+3. Restore the dependencies:
+   ```bash
    dotnet restore
 
 
 
-
-Update the connection string for SQL Server in appsettings.json:
-
+4. Update the connection string for SQL Server in appsettings.json:
 "ConnectionStrings": {
   "DefaultConnection": "Server=your-server;Database=GloboTicketDb;User Id=your-username;Password=your-password;"
 }
-Run the database migrations to create the schema:
 
- ```bash
+
+
+5. Run the database migrations to create the schema:
+   ```bash
    dotnet ef database update
 
 
 
-Build and run the application:
-
- ```bash
+6. Build and run the application:
+   ```bash
    dotnet run ```
 
 
-
-Configuration  
-JWT Settings: The JWT token is configured in the appsettings.json file:
-
+ 
+7. Configuration  
+JWT Settings:  
+ The JWT token is configured in the appsettings.json file:  
 "JwtSettings": {
   "Secret": "your-secret-key-here",
   "Issuer": "GloboTicket",
@@ -136,12 +132,10 @@ Email Settings: Configure the SMTP settings in the appsettings.json for email no
   "SenderEmail": "your-email@domain.com",
   "SenderPassword": "your-email-password"
 }
-Running the Application  
-Run the project from the command line:
-
- ```bash
+8. Running the Application:  
+   ```bash
    dotnet run
+
+
+
 The application will be available on http://localhost:5000 or the port you configure.
-
-
-
