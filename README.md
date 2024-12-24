@@ -146,4 +146,4 @@ JWT Settings:
 
 
 
-The application will be available on http://localhost:5000 or the port you configure.
+The application will be available on http://localhost:5000 or https://localhost:7052 or the port you configure.
