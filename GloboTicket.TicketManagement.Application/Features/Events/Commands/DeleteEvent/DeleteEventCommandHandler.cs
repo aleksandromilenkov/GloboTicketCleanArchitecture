@@ -12,7 +12,7 @@ using System.Threading.Tasks;
 
 namespace GloboTicket.TicketManagement.Application.Features.Events.Commands.DeleteEvent
 {
-    public class DeleteEventCommandHandler : IRequest<DeleteEventCommand>
+    public class DeleteEventCommandHandler : IRequestHandler<DeleteEventCommand, Unit>
     {
         private readonly IEventRepository _eventRepository;
         private readonly IMapper _mapper;
@@ -24,7 +24,7 @@ namespace GloboTicket.TicketManagement.Application.Features.Events.Commands.Dele
         public async Task<Unit> Handle(DeleteEventCommand request, CancellationToken cancellationToken)
         {
             var eventToDelete = await _eventRepository.GetByIdAsync(request.EventId);
-            if (eventToDelete != null) {
+            if (eventToDelete == null) {
                 throw new NotFoundException(nameof(Event), request.EventId);
             }
             await _eventRepository.DeleteAsync(eventToDelete);
