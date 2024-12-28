@@ -8,6 +8,9 @@ using GloboTicket.TicketManagement.Infrastructure;
 using GloboTicket.TicketManagment.Persistence;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
+using MediatR;
+using System.Reflection;
+using GloboTicket.TicketManagement.Application.Features.Events.Commands.UpdateEvent;
 namespace GloboTicket.TicketManagement.Api
 {
     public static class StartupExtensions
@@ -22,6 +25,8 @@ namespace GloboTicket.TicketManagement.Api
             builder.Services.AddApplicationServices();
             builder.Services.AddInfrastructureServices(builder.Configuration);
             builder.Services.AddPersistenceServices(builder.Configuration);
+            // Register MediatR and specify the assembly where your handlers are located
+            builder.Services.AddMediatR(Assembly.GetAssembly(typeof(UpdateEventCommandHandler)));
             builder.Services.AddScoped<ILoggedInUserService, LoggedInUserService>();
             builder.Services.AddHttpContextAccessor();
             builder.Services.AddControllers();
