@@ -27,6 +27,10 @@ namespace GloboTicket.TicketManagement.Application.Features.Events.Queries.GetEv
         public async Task<EventExportFileVm> Handle(GetEventsExportQuery request, CancellationToken token)
         {
             var allEvents = (await _eventRepository.ListAllAsync()).OrderBy(e => e.Date);
+            if (!allEvents.Any())
+            {
+                throw new Exception("No events found to export.");
+            }
             var mappedEvents = _mapper.Map<List<EventExportDto>>(allEvents);
             var fileData = _csvExporter.ExportEventsToCsv(mappedEvents);
             var eventExportFileDto = new EventExportFileVm() { ContentType = "text/csv", Data = fileData, EventExportFileName = $"{Guid.NewGuid()}.csv"};

@@ -17,6 +17,6 @@ namespace GloboTicket.TicketManagement.Domain.Entities
         public string? Description { get; set; }
         public string? ImageUrl { get; set; }
         public Guid CategoryId { get; set; }
-        public Category Category { get; set; }
+        public Category Category { get; set; } = default!;
     }
 }
