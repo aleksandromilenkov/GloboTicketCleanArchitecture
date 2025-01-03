@@ -30,7 +30,14 @@ namespace GloboTicket.TicketManagment.Persistence
             services.AddScoped<IOrderRepository, OrderRepository>();
 
             // Register Identity services with the modified DbContext
-            services.AddIdentity<ApplicationUser, IdentityRole>()
+            services.AddIdentity<ApplicationUser, IdentityRole>(options =>
+            {
+                options.Password.RequireDigit = true; // Ensure at least one digit is present
+                options.Password.RequiredLength = 6; // Set minimum length (adjust as needed)
+                options.Password.RequireUppercase = false; // Disable other constraints
+                options.Password.RequireLowercase = false;
+                options.Password.RequireNonAlphanumeric = false;
+            })
                 .AddEntityFrameworkStores<GloboTicketDbContext>() // Use the same DbContext for Identity
                 .AddDefaultTokenProviders();
 

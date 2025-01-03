@@ -16,13 +16,13 @@ namespace GloboTicket.TicketManagement.Api.Controllers
         }
 
         [HttpPost("authenticate")]
-        public async Task<ActionResult<AuthenticationResponse>> AuthenticateAsync(AuthenticationRequest request)
+        public async Task<ActionResult<AuthenticationResponse>> AuthenticateAsync([FromBody]AuthenticationRequest request)
         {
             return Ok(await _authenticationService.AuthenticateAsync(request));
         }
 
         [HttpPost("register")]
-        public async Task<ActionResult<RegistrationResponse>> RegisterAsync(RegistrationRequest request)
+        public async Task<ActionResult<RegistrationResponse>> RegisterAsync([FromBody]RegistrationRequest request)
         {
             return Ok(await _authenticationService.RegisterAsync(request));
         }
